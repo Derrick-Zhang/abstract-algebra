@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+{\bf Math 5125}\\
+HW 1
+\smallskip
+
+Due: Wednesday, September 1
+\end{center}
+
+
+\begin{enumerate}
+
+\item Suppose $A \overset{f}{\to} B$ and $C\subseteq A$. 
+\begin{enumerate}
+\item Prove that $C\subseteq f^{-1}(f(C))$.
+\item Prove that $C=f^{-1}(f(C))$ if $f$ is injective.
+\end{enumerate}
+
+\item Let $a=12$ and $b=17$. Use the Euclidean algorithm to find $d=\gcd(a,b)$ and express $d$ as a linear combination of $a$ and $b$. Does $a$ have a multiplicative inverse modulo $b$? If so, what is $\overline{a}^{-1}\in\Z/b\Z$?
+
+\item Let $n$ be a positive integer. For any $\overline{a}\in\Z/n\Z$ (where $a\in\Z$), define the set
+\begin{align*}
+( \overline{a} ) &= \{\overline{ka} \mid k \in \mathbb{Z}\} \subseteq \Z/n\Z.
+\end{align*}
+Prove that $( \overline{a} ) = ( \overline{d} )$ where $d=\gcd(a,n)$.
+
+\item Show that the set 
+\begin{align*}
+S=\Big\{\begin{pmatrix}
+a & -b \\ 
+b & a
+\end{pmatrix} {\Big|}\ a,b\in \mathbb{R}\Big\}.
+\end{align*}
+is {\em closed} under matrix addition and multiplication, i.e., $A,B\in S$ implies $A+B\in S$ and $AB\in S$. (Do the formulas for these operations look familiar?)
+
+
+\end{enumerate}
+
+\end{document}
