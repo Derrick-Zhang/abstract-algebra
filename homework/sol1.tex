@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+{\bf Math 5125}\\
+HW 1
+\smallskip
+
+Due: Wednesday, September 1
+\end{center}
+
+
+\begin{enumerate}
+
+\item Suppose $A \overset{f}{\to} B$ and $C\subseteq A$.
+\begin{enumerate}
+\item Prove that $C\subseteq f^{-1}(f(C))$.
+\item Prove that $C=f^{-1}(f(C))$ if $f$ is injective.
+\end{enumerate}
+
+\smallskip
+{\bf Proof:} (a) For $c \in C$, by the definition of image, we have $f(c) \in f(C)$, which is equivalent to $c \in f^{-1}(f(C))$, by the definition of pre-image. Therefore, $c \in C \Rightarrow c \in f^{-1}(f(C))$, i.e. $C \subseteq f^{-1}(f(C))$.
+
+(b) All we need to show is that if $f$ is injective, $f^{-1}(f(C)) \subseteq C$. For $c \in f^{-1}(f(C))$, we have $f(c) \in f(C)$. This means that there exists $c_0 \in C$, such that $f(c) = f(c_0)$. And $f$ is injective means that $f(c) = f(c_0) \Rightarrow c = c_0$. Therefore, $c \in C$. We have $f^{-1}(f(c)) \subseteq C$ and this together with (a) completes the proof.
+
+\newpage
+
+\item Let $a=12$ and $b=17$. Use the Euclidean algorithm to find $d=\gcd(a,b)$ and express $d$ as a linear combination of $a$ and $b$. Does $a$ have a multiplicative inverse modulo $b$? If so, what is $\overline{a}^{-1}\in\Z/b\Z$?
+
+\smallskip
+{\bf Proof:} Using the Euclidean algorithm,
+\begin{align}
+    17 = 12 \times 1 + 5\cr
+    12 = 5 \times 2 + 2\cr
+    5 = 2 \times 2 + 1\nonumber
+\end{align}
+Therefore, for $a = 12$ and $b = 17$, $d = \gcd(a,b) = 1$. To express $d$ as a linear combination of $a$ and $b$, we have
+\begin{align}
+    d = 1 &= 5 - 2 \times 2 \cr
+     &= 5 - (12 - 5 \times 2) \times 2 \cr
+     &= 5 \times 5 - 12 \times 2 \cr
+     &= (17 - 12 \times 1) \times 5 - 12 \times 2 \cr
+     &= 17 \times 5 - 12 \times 7 \cr
+     &= -7 a + 5 b~. \nonumber
+\end{align}
+Since $1 = -7 a + 5 b$, applying modulo $b$ to this equation, we have
+$$
+1 \equiv -7 a \mod b~.
+$$
+Therefore,
+$$
+\overline{a}^{-1} = \overline{-7} = \overline{10} \in \Z/b\Z~.
+$$
+
+\newpage
+\item Let $n$ be a positive integer. For any $\overline{a}\in\Z/n\Z$ (where $a\in\Z$), define the set
+\begin{align*}
+( \overline{a} ) &= \{\overline{ka} \mid k \in \mathbb{Z}\} \subseteq \Z/n\Z.
+\end{align*}
+Prove that $( \overline{a} ) = ( \overline{d} )$ where $d=\gcd(a,n)$.
+
+\smallskip
+{\bf Proof:} For given $a, n \in \Z$, we write their greatest common divisor $d = \gcd(a,n)$.
+%Since we are only considering equivalence classes, without losing of generality, suppose $0 \le a < n$.
+Write $a = r d$, where $r \in \Z$.
+
+If $\overline{x} \in (\overline{a})$, then there exists $m ,k \in \Z$:
+$$
+x = m n + k a = m n + (k r) d~,
+$$
+therefore $\overline{x} \in (\overline{d})$, so $(\overline{a}) \subset (\overline{d})$.
+
+If $\overline{x} \in (\overline{d})$, then there exists $m, k \in \Z$:
+$$
+x = mn + k d~.
+$$
+Also, $d$ can be written as a linear combination of $a$ and $n$,
+$$
+d = p a + q n \quad p,q \in \Z~.
+$$
+Therefore,
+$$
+x = mn + k(pa + qn) = (m + kq) n + (kp) a~,
+$$
+so $\overline{x} \in (\overline{a})$ and $(\overline{d}) \subset (\overline{a})$. Finally, $(\overline{a}) = (\overline{d})$ where $d = \gcd(a,n)$.
+
+\newpage
+
+\item Show that the set
+\begin{align*}
+S=\Big\{\begin{pmatrix}
+a & -b \\
+b & a
+\end{pmatrix} {\Big|}\ a,b\in \mathbb{R}\Big\}.
+\end{align*}
+is {\em closed} under matrix addition and multiplication, i.e., $A,B\in S$ implies $A+B\in S$ and $AB\in S$. (Do the formulas for these operations look familiar?)
+
+\smallskip
+{\bf Proof:} For any $A, B \in S$, say
+$$
+A = \begin{pmatrix}
+a_1 & -b_1 \\
+b_1 & a_1
+\end{pmatrix}~, \quad
+B = \begin{pmatrix}
+a_2 & -b_2 \\
+b_2 & a_2
+\end{pmatrix}~,\quad
+a_i, b_i \in \mathbb{R}~.
+$$
+Since $\mathbb{R}$ is closed under addition and multiplication. Then
+$$
+A + B = \begin{pmatrix}
+a_1 + a_2 & - (b_1 + b_2) \\
+b_1 + b_2 & a_1 + a_2
+\end{pmatrix} \in S~,
+$$
+and
+$$
+A B = \begin{pmatrix}
+    a_1 a_2 - b_1 b_2 & - (a_1 b_2 + a_2 b_1) \\
+    a_1 b_2 + a_2 b_1 & a_1 a_2 - b_1 b_2
+\end{pmatrix} \in S~.
+$$
+Therefore, the matrix addition and multiplication over the set $S =\Big\{ \begin{pmatrix}
+    a & -b \\
+    b & a
+    \end{pmatrix} {\Big |} \  a,b \in \mathbb{R} \Big\}$ looks familiar with addition and multiplication over complex numbers $\mathbb{C} = \{ a + b i \ | \ a, b\in \mathbb{R} \}$.
+
+\end{enumerate}
+
+\end{document}
