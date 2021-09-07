@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+{\bf Math 5125}\\
+HW 2
+\end{center}
+
+
+\begin{enumerate}
+
+\item Section 7.1, Problem 2: Prove that if $u$ is a unit in $R$ then so is $-u$.
+
+\smallskip
+{\bf Proof. }Since $u$ is a unit in $R$, there is some $v$ in $R$ such that $uv = vu = 1$. Since $uv = (-u)(-v)$ and $vu = (-v)(-u)$, therefore $(-u)(-v) = (-v)(-u) = 1$, $-u$ is also a unit in $R$.
+\bigskip
+
+\item Section 7.1, Problem 3: Let $R$ be a ring with identity and let $S$ be a subring of $R$ containing the identity. Prove that if $u$ is a unit in $S$ then $u$ is a unit in $R$. Show by example that the converse is false.
+
+\smallskip
+{\bf Proof. }Since $u$ is a unit in $S$, then there is some $v$ in $S$ such that $uv = vu = 1$. Since $S$ is a subring of $R$, $u,v$ is also in $R$, therefore, $u$ is a unit in $R$. Conversely, this is false, because we can take $R = \mathbb Q$, $S = \Z$ and $u = 2$. $u$ is a unit in $R$ because $2 \times 1/2 = 1$. However, $u$ is not a unit in $S$ because the only units in $\Z$ are $\pm1$.
+\bigskip
+
+\item Section 7.1, Problem 5: Decide which of the following are subrings of $\mathbb Q$:
+\begin{enumerate}
+    \item the set of all rational numbers with odd denominators (when written in lowest terms)
+
+    \smallskip
+    {\bf Answer. }The set form group under addition. The multiplication and addition of two such numbers are still rational numbers with odd denominators, when written in lowest terms, so it is a subring.
+    \bigskip
+    \item the set of nonnegative rational numbers
+
+    \smallskip
+    {\bf Answer. }This is not a subring because it does not form a group under addition. There is no identity for addition.
+    \bigskip
+    \item the set of all rational numbers with odd numerators (when written in lowest terms)
+
+    \smallskip
+    {\bf Answer. }This is not a subring. For example, $1 /5 + 3 / 5 = 4 / 5$, which is not a rational number with odd numerator.
+    \bigskip
+\end{enumerate}
+\item Section 7.1, Problem 14: Let $x$ be a nilpotent element of the commutative ring $R$
+\begin{enumerate}
+    \item Prove that $x$ is either zero or a zero divisor
+
+    \smallskip
+    {\bf Proof. }Since $x$ is nilpotent, then there exists $m \in \Z^+$, such that $x^m = 0$. Without losing of generality, we can assume that $m$ is the smallest positive integer, such that $x^m = 0$. If $m = 1$, then $x = 0$ is the zero. If $m > 1$, we can write $x^m = x \cdot x^{m-1} = 0$. Since $x^{m-1} \neq 0$, then $x$ is a zero divisor. In conclusion, $x$ is either zero or a zero divisor.
+    \bigskip
+
+    \item Prove that $rx$ is nilpotent for all $r \in R$
+
+    \smallskip
+    {\bf Proof. }Since $x$ is nilpotent, then there exists $m \in \Z^+$, such that $x^m = 0$. Since $R$ is commutative, then $\forall r \in R$, $(rx)^m = r^m x^m = 0$. Therefore, $rx$ is nilpotent for all $r \in R$.
+    \bigskip
+
+    \item Prove that $1 + x$ is a unit in $R$
+
+    \smallskip
+    {\bf Proof. }Consider $1 + (-x) + (-x)^2 + \cdots + (-x)^{m-1} \in R$, then $(1+x)[1 + (-x) + (-x)^2 + \cdots + (-x)^{m-1}] = 1 + (-1)^{m-1}x^m = 1$ because $x^m = 0$. Therefore, $1 + x$ is unit in $R$.
+    \bigskip
+
+    \item Deduce that the sum of a nilpotent element and a unit is a unit.
+
+    \smallskip
+    {\bf Answer. }Suppose $x$ is nilpotent and $u$ is a unit in $R$, then by (b), $u^{-1}x$ is also nilpotent. By (c), we have $1 + u^{-1}x$ is a unit in $R$. The multiplication of two units is still a unit, so $u(1 + u^{-1}x) = u + x$ is a unit.
+    \bigskip
+\end{enumerate}
+\item Section 7.2, Problem 1: Let $p(x) = 2 x^3 - 3 x^2 + 4 x - 5$ and let $q(x) = 7 x^3 + 33 x - 4$. In each of parts (a), (b) and (c) compute $p(x) + q(x)$ and $p(x)q(x)$ under the assumption that the coefficients of the two given polynomials are taken from the specified ring:
+\begin{enumerate}
+    \item $R = \Z$
+
+    \smallskip
+    {\bf Answer. }
+    $$
+    p(x) + q(x) = 9 x^3 - 3 x^2 + 37x - 9
+    $$
+    $$
+    p(x) q(x) = 14 x^6 - 21 x^5 + 94 x^4 - 142 x^3 + 144 x^2 - 181 x + 20
+    $$
+    \bigskip
+
+    \item $R = \Z / 2\Z$
+
+    \smallskip
+    {\bf Answer. }Now $p(x) = x^2 + 1$ and $q(x) = x^3 + x$. Therefore,
+    $$
+    p(x) + q(x) = x^3 + x^2 + x + 1
+    $$
+    $$
+    p(x) q(x) = x^5 + x
+    $$
+    \bigskip
+
+    \item $R = \Z / 3\Z$
+
+    \smallskip
+    {\bf Answer. }Now $p(x) = 2x^3 + x + 1$ and $q(x) = x^3 + 2$. Therefore,
+    $$
+    p(x) + q(x) = x
+    $$
+    $$
+    p(x) q(x) = 2x^6 + x^4 + 2x^3 + 2x + 2
+    $$
+    \bigskip
+\end{enumerate}
+\item Section 7.2, Problem 6: Let $S$ be a ring with identity $1\neq0$. Let $n \in \Z^+$ and let $A$ be an $n \times n$ matrix with entries from $S$ whose $i,j$ entry is $a_{ij}$. Let $E_{ij}$ be the element of $M_n(S)$ whose $i,j$ entry is $1$ and whose other entries are all $0$.
+\begin{enumerate}
+    \item Prove that $E_{ij}A$ is the matrix whose $i$th row equals the $j$th row of $A$ and all other rows are zero.
+
+    \smallskip
+    {\bf Proof. }For a matrix $M$, we use $(M)_{ij}$ to denote its $i,j$ entries. By definition, $(E_{ij})_{ab} = \delta_{ia} \delta_{jb}$. Then consider the $a,b$ entry of $E_{ij}A$,
+    $$
+    (E_{ij}A)_{ab} = (E_{ij})_{ac} (A)_{cb} = \delta_{ia} \delta_{jc} a_{cb} = \delta_{ia} a_{jb}~.
+    $$
+    When $a = i$, we have $(E_{ij}A)_{ib} = a_{jb}$. When $a \neq i$, it's zero. Therefore, $E_{ij}A$ is the matrix whose $i$th row equals the $j$th row of $A$ and all other rows are zero.
+    \bigskip
+
+    \item Prove that $A E_{ij}$ is the matrix whose $j$th column equals the $i$th column of $A$ and all other columns are zero.
+
+    \smallskip
+    {\bf Proof. }Similar to (a)
+    $$
+    (AE_{ij})_{ab} = (A)_{ac} (E_{ij})_{cb} = a_{ac} \delta_{ic} \delta_{jb} = a_{ai} \delta_{jb}.
+    $$
+    When $b = j$, $(AE_{ij})_{aj} = a_{ai}$. And it equals zero otherwise. Therefore, $A E_{ij}$ is the matrix whose $j$th column equals the $i$th column of $A$ and all other columns are zero.
+    \bigskip
+
+    \item Deduce that $E_{pq} A E_{rs}$ is the matrix whose $p,s$ entry is $a_{qr}$ and all other entries are zero.
+
+    \smallskip
+    {\bf Answer. }It directly follows from (a) and (b).
+    \bigskip
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
