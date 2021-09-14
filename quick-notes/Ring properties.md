@@ -1,0 +1,11 @@
+- A ring $R$ with identiy $1 \neq 0$, is called a **division ring** if every nonzero element $a \in R$ has a multiplicative inverse.
+- A commutative division ring is called a **field**
+- A nonzero element $a$ of $R$ is called a **zero divisor** if there is a nonzero element $b$ in $R$ such that either $ab = 0$ or $ba = 0$
+- Assume $R$ has an identity $1 \neq 0$. An element $u$ of $R$ is called a **unit** in $R$ if there is some $v$ in $R$ such that $uv = vu = 1$. The set of units in $R$ is denoted $R^\times$.
+- A zero divisor can never be a unit. Fields contain no zero divisors
+- For $\mathbb Z/n \mathbb Z$,  $\bar a$ is a unit if $\gcd(a,n)=1$, is a zero divisor if $\gcd(a,n) \neq 1$.
+- $\mathbb Z / n \mathbb Z$ is a field if and only if $n$ is a prime.
+- A commutative ring with identity $1 \neq 0$ is called an **integral domain** if it has no zero divisors
+- These absence of zero divisors give integral domain the cancellation property.
+- Any finite integral domain is a field
+- 
