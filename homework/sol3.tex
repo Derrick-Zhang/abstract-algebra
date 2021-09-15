@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+{\bf Math 5125}\\
+HW 3
+\smallskip
+
+Due: Wednesday, September 15
+\end{center}
+
+\begin{enumerate}
+
+\item Suppose that $A,B,C$ are rings and $\varphi : A \to B$ and $\psi: B \to C$ are ring homomorphisms. Prove that $\psi\circ\varphi: A \to C$ is a ring homomorphism. How are $\ker \varphi$ and $\ker(\psi\circ\varphi)$ related?
+
+\noindent{\bf Proof. }For any $x,y \in A$, $\psi\circ\varphi(x + y) = \psi(\varphi(x+y)) = \psi(\varphi(x) + \varphi(y)) = \psi(\varphi(x)) + \psi(\varphi(y)) = \psi\circ\varphi(x) + \psi\circ\varphi(y)$. Also, $\psi\circ\varphi(xy) = \psi(\varphi(xy)) = \psi(\varphi(x) \varphi(y)) = \psi(\varphi(x)) \psi(\varphi(y)) = (\psi\circ\varphi)(x) \cdot (\psi\circ\varphi)(y)$. Therefore, $\psi \circ \varphi: A \to C$ is a ring homomorphism.
+
+For $x \in \ker \varphi$,  $\varphi(x) = 0$, $\psi \circ \varphi (x) = \psi(0) = 0$, therefore $x \in \ker(\psi \circ \varphi)$ and $\ker \varphi \subset \ker(\psi \circ \varphi)$.
+
+\newpage
+
+\item Consider the set $I$ consisting of all polynomials $a_0+a_1x+\dotsm\in\Z[x]$ whose constant term (i.e., the integer $a_0$) is {\em even}. Show that $I$ is an ideal of $\Z[x]$ and the quotient ring $\Z[x]/I$ is isomorphic to $\Z/2\Z$.
+
+({\em Suggestion}: Apply the First Isomorphism Theorem to a homomorphism $\Z[x]\to\Z/2\Z$ defined as a composition of homomorphisms $\Z[x]\to\Z$ and $\Z\to\Z/2\Z$; this approach eliminates a lot of tedious checking.)
+
+
+\noindent{\bf Proof. }$I$ is closed under addition because the addition of two even number is still an even number. For the outer product, consider $f(x) = a_0 + a_1 x + \cdots \in I$, where $a_0$ is even, and $g(x) = b_0 + b_1 x + \cdots \in \Z[x]$. Then $f(x)g(x) = g(x) f(x) = a_0 b_0 + (a_0 b_1 + a_1 b_0) x + \cdots \in I$ because the multiplication of an even number with any integer is still an even number. Therefore, $I$ is an ideal of $\Z[x]$.
+
+Define a surjective homomorphism $\varphi: \Z[x] \to \Z$, $(a_0 + a_1 x + \cdots) \mapsto a_0$. Define another homomorphism $\psi$ as the canonical projection from $\Z$ to $\Z/2\Z$. Then $\psi \circ \varphi$ is a homomorphism $\Z[x] \to \Z/2\Z$, the kernel of this map is $I$ and the map is surjective. Thus, using the First Isomorphism Theorem, we have $\Z[x]/I \simeq \Z/2\Z$.
+
+
+\newpage
+\item Do the following problems from Section 7.3 in the textbook:
+\begin{itemize}
+\item \#1 ({\em Hint}: Which integers satisfy $a^2=2a$?)
+
+\noindent{\bf Proof. }Suppose there exists an isomorphism $\varphi: 2 \Z \to 3\Z$ mapping $2 \in 2\Z$ to $a \in 3\Z$, then $\varphi(4) = \varphi(2^2) = \varphi(2)\varphi(2) = a^2$. Also $\varphi(4) = \varphi(2 + 2) \varphi(2) + \varphi(2) = 2a$. Therefore $a^2 = 2a$. But the only integers satisfy this equation are $0$, $2$ and $0, 2 \notin 3\Z$. Contradiction.
+
+\newpage
+\item \#7 ({\em Note}: The ring operations on the direct product $\Z\times\Z$ are defined componentwise, i.e., $(a,d)+(a',d')=(a+a',d+d')$ and $(a,d)\cdot(a',d')=(aa',dd')$.)
+
+\noindent{\bf Proof. }$$\varphi\left(
+\begin{pmatrix}
+    a & b\\
+    0 & d
+\end{pmatrix}+
+\begin{pmatrix}
+    e & f\\
+    0 & g
+\end{pmatrix}
+\right) = \varphi\left(\begin{pmatrix}
+    a+e & b+f\\
+    0 & d+g
+\end{pmatrix}\right) = (a+e, d+g)
+$$
+$$
+\varphi\left(\begin{pmatrix}
+    a & b\\
+    0 & d
+\end{pmatrix}\right) +
+\varphi\left(\begin{pmatrix}
+    e & f\\
+    0 & g
+\end{pmatrix}\right) = (a,d) + (e,g) = (a+e, d+g)
+$$
+$$
+\varphi\left(
+\begin{pmatrix}
+    a & b\\
+    0 & d
+\end{pmatrix}
+\begin{pmatrix}
+    e & f\\
+    0 & g
+\end{pmatrix}
+\right) = \varphi\left(\begin{pmatrix}
+    ae & af+bg\\
+    0 & dg
+\end{pmatrix}\right) = (ae, dg)
+$$
+$$
+\varphi\left(\begin{pmatrix}
+    a & b\\
+    0 & d
+\end{pmatrix}\right)
+\varphi\left(\begin{pmatrix}
+    e & f\\
+    0 & g
+\end{pmatrix}\right) = (a,d) \cdot (e,g) = (ae, dg)
+$$
+Therefore, it is a homomorphism. Moreover, it is surjective. The kernel is $\{\begin{pmatrix} 0 & a\\ 0 & 0 \end{pmatrix} | a \in \Z\}$.
+
+\newpage
+\item \#18
+
+\noindent{\bf Proof.} (a) It is easy to see that addition and additional inverse is closed in $I \cap J$. Similarly, for outer products, take $x \in I$, $y \in J$, $r \in R$. Since $I,J$ are ideals of $R$, we have $rx, xr \in I$, $ry, yr \in J$. For $a \in I \cap J$, since $a\in I$ and $a\in J$, $ra, ar \in I$ and $ra, ar \in J$, therefore, $ra, ar \in I \cap J$. So $I \cap J$ is an ideal of $R$.
+
+\noindent(b) For $r \in R$ and $x \in \bigcap\limits_{i \in I} S_i$, we have $x \in S_i$ for $i \in I$. Therefore, $xr, rx \in S_i$ for $i \in I$ and $xr, rx \in \bigcap\limits_{i\in I} S_i$. Therefore, arbitrary intersection of ideals is again an ideal.
+
+\newpage
+\item \#20
+
+\noindent{\bf Proof.} Since $I$ is an ideal of $R$, then for $x \in I$ and $r \in R$, we have $rx, xr \in I$. Since $S$ is a subring of $R$, so we have, for $x\in I$ and $s \in S$: $sx, xs \in I$.
+
+For $x \in S \cap I$, $s \in S$, we have $x\in S$ and $x \in I$. Since $S$ is a subring, $sx, xs \in S$. And from above we have $sx, xs \in I$, therefore $sx, xs \in S\cap I$. Therefore, $I \cap S$ is an ideal of $S$.
+
+Not every ideal of a subring $S$ of a ring $R$ need be of the form $I \cap S$ for some ideal $I$ of $R$. For example, we can take $R = \mathbb R$, which contains only two ideals $\{0\}$ and $R$ itself. Take the subring $S = \Z$. We have $\Z \cap \{0\} = \{0\}$ and $\Z \cap \mathbb R = \Z$. However, $\Z$ has ideals like $2 \Z$.
+\end{itemize}
+\end{enumerate}
+
+\end{document}
